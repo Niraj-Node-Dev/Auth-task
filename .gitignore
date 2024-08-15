@@ -1,0 +1,17 @@
+.DS_Store
+**/.DS_Store
+node_modules/
+.pnpm-store
+**/tsconfig.build.tsbuildinfo
+**/tsconfig.tsbuildinfo
+**/node_modules
+.commit/
+.env
+!.env.development
+**/dist
+**/junit.xml
+.test/**
+!.test/.gitignore
+*.tfvars
+version.txt
+**/.nx/**
