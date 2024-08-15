@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
 import { DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USERNAME } from 'config';
+import { Users, UserSessions } from 'entities';
 
 export const databaseProviders = [
   {
@@ -21,7 +22,7 @@ export const databaseProviders = [
         },
       });
 
-      sequelize.addModels([]);
+      sequelize.addModels([Users, UserSessions]);
       await sequelize.sync();
 
       return sequelize;

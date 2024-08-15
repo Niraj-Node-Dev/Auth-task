@@ -1,9 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { swagger } from './swagger';
-import * as dotenv from 'dotenv';
 import { HOST, PORT, SWAGGER_DOC_ENDPOINT } from 'config';
-dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -12,7 +10,7 @@ async function bootstrap() {
     console.log('==========> req url:', req.url, '=======> req method:', req.method);
     next();
   });
-  
+
   swagger(app, SWAGGER_DOC_ENDPOINT);
 
   const host = HOST === 'localhost' ? 'localhost' : HOST;
